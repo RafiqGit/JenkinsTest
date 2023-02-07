@@ -13,6 +13,11 @@ provider "aws" {
 }
 
 # Create a VPC
-resource "aws_vpc" "example" {
-  cidr_block = "10.0.0.0/16"
+resource "aws_instance" "app_server"{
+  ami ="ami-830c94e3"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name= "Terraform Demo"
+  }
 }
